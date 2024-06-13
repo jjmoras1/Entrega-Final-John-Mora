@@ -1,1 +1,5 @@
 # Tercera-Pre-entrega-John-Mora
+Este proyecto simula la página de un hotel. Tiene tre funcionalidades:
+1) Inicio: Se encuentra en la pestaña superior derecha. Está el nombre del hotel y un mensaje de bienvenida. El botón verde lleva a los enlaces de contacto.
+2) Crear Huesped: Se encuentre en la pestaña superior central. Esta nos lleva a una vista donde se llena un formulario con los datos del huesped. Este está en la parte inferior de la página o se puede llegar directamente con el boton verde. Al terminar de ingresar un huesped se vuelve a la página de inicio.
+3) Lista de Huspedes: Se encuentra en la parte superior izquierda de la página. Muestra la lista de huespedes que se encuentran en la base de datos. Esta lista está en la parte inferior de la página o se puede llegar a través del botón verde.
