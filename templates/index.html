@@ -27,8 +27,25 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
+                        {% if request.user.is_authenticated %}
+                        <li class="nav-item">
+                            <form action={% url 'logout' %} method="post">
+                                {% csrf_token %}
+                                <input type="submit" style="background: none;border: none;" class="nav-link"  value="Cerrar Sesión">
+                                
+                            </form>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="#about">{{request.user.username}}</a></li>
                         <li class="nav-item"><a class="nav-link" href={% url 'crear_huesped' %}>Crear Huesped</a></li>
                         <li class="nav-item"><a class="nav-link" href={% url 'huespedes' %}>Lista de Huespedes</a></li>
+                        
+                        {% else %}
+                        <li class="nav-item"><a class="nav-link" href={% url 'login' %}>Iniciar Sesión</a></li>
+                        <li class="nav-item"><a class="nav-link" href={% url 'registro' %}>Registrarse</a></li>
+                        
+                        {% endif %}
+                        
+                        
                         
                     </ul>
                 </div>
