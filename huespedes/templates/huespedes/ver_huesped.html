@@ -1,0 +1,28 @@
+{% extends 'index.html' %}
+
+{% block title_head %}
+Huespedes
+{% endblock title_head %}
+
+{% block h1_header %}
+
+{% endblock h1_header %}
+
+{% block h2_header %}
+{{huesped}}
+
+{% endblock h2_header %}
+
+{% block boton_verde %}
+Ver Ficha completa
+{% endblock boton_verde %}
+
+{% block main %}
+<ul>
+    <li>Nombre:{{huesped.nombre}}</li>
+    <li>Apellido:{{huesped.apellido}}</li>
+    <li>Fecha de Nacimiento:{{huesped.fecha_de_nacimiento}}</li>
+    <li>Nacionalidad:{{huesped.nacionalidad}}</li>
+</ul>
+
+{% endblock main %}

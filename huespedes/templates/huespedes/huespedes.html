@@ -1,0 +1,34 @@
+{% extends 'index.html' %}
+
+{% block title_head %}
+Huespedes
+{% endblock title_head %}
+
+{% block h1_header %}
+Huespedes
+{% endblock h1_header %}
+
+{% block main %}
+<a href={% url 'crear_huesped' %}>Crear Huesped</a>
+
+<form action={% url 'huespedes' %}>
+    {{formulario}}
+
+    <input type="submit" value='Buscar'>
+</form>
+
+{% if huespedes %}
+<ul>
+    {% for huesped in huespedes %}
+    <!--<li>{{ huesped.nombre }} {{ huesped.apellido }} de {{huesped.edad}} años, de nacionalidad {{huesped.nacionalidad}}</li>-->
+    <li><a href={% url 'ver_huesped' huesped.id %} >{{huesped}}</a> | <a href={% url 'actualizar_huesped' huesped.id %}>Actualizar</a> | <a href={% url 'eliminar_huesped' huesped.id %}>Eliminar</a>        </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No hay huespedes creados</p>
+{% endif %}
+{% endblock main %}
+
+{% block boton_verde %}
+Listado
+{% endblock boton_verde %}
