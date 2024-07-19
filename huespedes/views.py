@@ -5,6 +5,7 @@ from huespedes.models import Huesped
 from huespedes.forms import BuscarHuesped
 from django.urls import reverse_lazy
 from django.views.generic.detail import DetailView
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 class Huespedes(ListView):
     model=Huesped
@@ -22,18 +23,18 @@ class Huespedes(ListView):
         context['nombre']=self.request.GET.get('nombre','')
         return context
     
-class CrearHuesped(CreateView):
+class CrearHuesped(LoginRequiredMixin,CreateView):
     model=Huesped
     template_name='huespedes/crear_huesped.html'
     success_url=reverse_lazy('huespedes')
     fields=['nombre','apellido','nacionalidad','fecha_de_nacimiento']
     
-class EliminarHuesped(DeleteView):
+class EliminarHuesped(LoginRequiredMixin,DeleteView):
     model=Huesped
     template_name='huespedes/eliminar_huesped.html'
     success_url=reverse_lazy('huespedes')
     
-class ActualizarHuesped(UpdateView):
+class ActualizarHuesped(LoginRequiredMixin,UpdateView):
     model=Huesped
     template_name='huespedes/actualizar_huesped.html'
     success_url=reverse_lazy('huespedes')
