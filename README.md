@@ -1,5 +1,7 @@
 # Entrega final-John-Mora
-Este proyecto simula la página de un hotel. Tiene tre funcionalidades:
-1) Inicio: Se encuentra en la pestaña superior derecha. Está el nombre del hotel y un mensaje de bienvenida. El botón verde lleva a los enlaces de contacto.
-2) Crear Huesped: Se encuentre en la pestaña superior central. Esta nos lleva a una vista donde se llena un formulario con los datos del huesped. Este está en la parte inferior de la página o se puede llegar directamente con el boton verde. Al terminar de ingresar un huesped se vuelve a la página de inicio.
-3) Lista de Huspedes: Se encuentra en la parte superior izquierda de la página. Muestra la lista de huespedes que se encuentran en la base de datos. Esta lista está en la parte inferior de la página o se puede llegar a través del botón verde.
+
+Este proyecto simula la página de un hotel, ofreciendo una experiencia completa tanto para usuarios registrados como no registrados. En la pantalla de inicio, se encuentran las pestañas de Inicio, Sobre Nuestro Hotel, Iniciar Sesión y Registrarse. La sección "Sobre Nuestro Hotel" proporciona una descripción detallada de las bondades y características del hotel, accesible para todos los usuarios. La pestaña "Registrarse" permite a nuevos usuarios crear una cuenta con su correo electrónico y contraseña. Una vez registrado, el usuario puede iniciar sesión y acceder a opciones adicionales, como registrar huéspedes. Las pestañas superiores incluyen Inicio, Sobre Nuestro Hotel, el nombre del usuario, Agregar Huésped y Listado de Huéspedes. En la sección con el nombre del usuario, se pueden ver y editar sus datos personales, incluyendo nombre, apellido, fecha de nacimiento, email, foto y cambiar la contraseña. La pestaña "Agregar Huésped" permite ingresar datos de nuevos huéspedes como nombre, apellido, fecha de nacimiento, nacionalidad y foto. En "Listado de Huéspedes", se muestran todos los huéspedes registrados, con opciones para ver, editar o eliminar sus datos.
+
+Este es el enlace del video explicando el funcionamiento
+
+https://www.youtube.com/watch?v=Zy-dGZqqg9w

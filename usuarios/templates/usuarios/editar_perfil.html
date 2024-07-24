@@ -6,11 +6,29 @@ Editar perfil
 
 
 {% block h1_header %}
-Editar perfil
+Perfil de Usuario 
+
 {% endblock h1_header %}
 
+
+{% block h2_header %}
+<ul>
+    {% if request.user.datosextra.avatar %}
+         <img src={{request.user.datosextra.avatar.url}} alt="Avatar" height="100px">
+    {% endif %}
+         
+    <li>Usuario :{{user}}</li>
+    <li>Nombre :{{user.first_name}}</li>
+    <li>Apellido:{{user.last_name}}</li>
+    <li>email:{{user.email}}</li>
+    <li>Fecha de Nacimiento:{{request.user.datosextra.date_of_birth}}</li>
+    
+</ul>
+
+{% endblock h2_header %}
+
 {% block main %}
-<form action={% url 'editar_perfil' %} method="post" enctype="multipart/form-data">
+<form action={% url 'editar_perfil' %} method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     {{formulario}}
     <input type="submit" value="Editar">
@@ -25,5 +43,5 @@ Editar perfil
 
 
 {% block boton_verde %}
-Actualizar Datos
+Editar Datos de Usuario
 {% endblock boton_verde %}

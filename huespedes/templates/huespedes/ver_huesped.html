@@ -18,11 +18,19 @@ Ver Ficha completa
 {% endblock boton_verde %}
 
 {% block main %}
-<ul>
-    <li>Nombre:{{huesped.nombre}}</li>
-    <li>Apellido:{{huesped.apellido}}</li>
-    <li>Fecha de Nacimiento:{{huesped.fecha_de_nacimiento}}</li>
-    <li>Nacionalidad:{{huesped.nacionalidad}}</li>
+<ul style="list-style: none; padding: 0;">
+    <li style="display: flex; align-items: center;">
+        {% if huesped.foto %}
+            <img src="{{ huesped.foto.url }}" alt="Avatar" height="100px" style="margin-right: 20px;">
+        
+        {% endif %}
+        <div>
+            <p>Nombre: {{ huesped.nombre }}</p>
+            <p>Apellido: {{ huesped.apellido }}</p>
+            <p>Fecha de Nacimiento: {{ huesped.fecha_de_nacimiento }}</p>
+            <p>Nacionalidad: {{ huesped.nacionalidad }}</p>
+        </div>
+    </li>
 </ul>
 
 {% endblock main %}

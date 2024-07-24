@@ -12,4 +12,7 @@ def inicio(request):
     return render(request, 'inicio/inicio.html')
 
 
-
+def aboutus(request):
+    
+    
+    return render(request, 'inicio/aboutus.html')

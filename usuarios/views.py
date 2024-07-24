@@ -45,22 +45,36 @@ def registro(request):
 @login_required
 def editar_perfil(request):
     datosextra=request.user.datosextra
-    formulario=EditarPerfil(initial={'avatar':datosextra.avatar},instance=request.user)
-    
-    if request.method =="POST":
+    initial_data = {
+        'avatar': datosextra.avatar,
+        'date_of_birth': datosextra.date_of_birth
+    }
+        
+    formulario=EditarPerfil(initial=initial_data,instance=request.user)
+    if request.method=="POST":
         formulario=EditarPerfil(request.POST,request.FILES,instance=request.user)
         if formulario.is_valid():
+            if 'avatar' in request.FILES:
+                datosextra.avatar = formulario.cleaned_data.get('avatar')
+                
+            datosextra.date_of_birth = formulario.cleaned_data.get('date_of_birth')
             
-            
-            
-            datosextra.avatar=formulario.cleaned_data.get('avatar')
-            
+            datosextra.save()
             
             formulario.save()
             return redirect('editar_perfil')
     
     
     return render(request,'usuarios/editar_perfil.html',{'formulario':formulario})
+
+
+
+
+
+
+
+
+
 
 class CambiarPassword(LoginRequiredMixin,PasswordChangeView):
     template_name='usuarios/cambiar_pass.html'

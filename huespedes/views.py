@@ -27,7 +27,7 @@ class CrearHuesped(LoginRequiredMixin,CreateView):
     model=Huesped
     template_name='huespedes/crear_huesped.html'
     success_url=reverse_lazy('huespedes')
-    fields=['nombre','apellido','nacionalidad','fecha_de_nacimiento']
+    fields=['nombre','apellido','nacionalidad','fecha_de_nacimiento','foto']
     
 class EliminarHuesped(LoginRequiredMixin,DeleteView):
     model=Huesped
@@ -38,7 +38,7 @@ class ActualizarHuesped(LoginRequiredMixin,UpdateView):
     model=Huesped
     template_name='huespedes/actualizar_huesped.html'
     success_url=reverse_lazy('huespedes')
-    fields=['nombre','apellido','nacionalidad','fecha_de_nacimiento']
+    fields=['nombre','apellido','nacionalidad','fecha_de_nacimiento','foto']
     
 class VerHuesped(DetailView):
     model=Huesped

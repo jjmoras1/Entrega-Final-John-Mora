@@ -19,10 +19,13 @@ class EditarPerfil(UserChangeForm):
     first_name=forms.CharField(label='Nombre')
     last_name=forms.CharField(label='Apellido')
     avatar=forms.ImageField(required=False)
-    
+    date_of_birth = forms.DateField(label='Fecha de nacimiento', required=False, widget=forms.DateInput(attrs={'type': 'date'}))
+
     ...
     
     class Meta:
         model=User
-        fields=['email','first_name','last_name','avatar']
+        fields=['email','first_name','last_name','avatar','date_of_birth']
+        
+    
     

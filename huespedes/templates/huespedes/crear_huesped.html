@@ -15,7 +15,7 @@ Formulario
 
 {% comment "formulario" %}{% endcomment %}
 {% block main %}
-<form action={% url 'crear_huesped' %} method="post">
+<form action={% url 'crear_huesped' %} method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {{form}}
     <input type="submit" value="Crear">
